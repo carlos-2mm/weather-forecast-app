@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Title displayed in the browser's title bar or tab -->
+    <title>Weather Forecast Application</title>
+  </head>
+
+  <body>
+    <!-- Header section containing the main title and current day -->
+    <header>
+        <h1>Weather App</h1>
+        <h2 id="currentDay"></h2>
+    </header>
+    
+    <!-- Sidebar for city search functionality -->
+    <aside>
+        <h2>Search for a City</h2>
+        <input id="cityInput" placeholder="Search for a City"></input>
+        <button id="searchBtn"></button>
+        <ul id="pastSearch"></ul>
+    </aside>
+
+    <!-- Main content section for displaying weather details -->
+    <main>
+        <div id="currentWeather"></div>
+        <div>
+            <h3>5-day Forecast</h3>
+            <div id="futureCards"></div>
+        </div>
+    </main>
+    
+    </body>
+</html>

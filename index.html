@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Title displayed in the browser's title bar or tab -->
     <title>Weather Forecast Application</title>
+    <!-- fonts and styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Raleway&display=swap" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
@@ -17,20 +21,28 @@
     
     <!-- Sidebar for city search functionality -->
     <aside>
-        <h2>Search for a City</h2>
-        <input id="cityInput" placeholder="Search for a City"></input>
-        <button id="searchBtn"></button>
-        <ul id="pastSearch"></ul>
+        <div class="search-city">
+            <h2>Search for a City</h2>
+            <input id="cityInput" placeholder="Search for a City"></input>
+            <button id="searchBtn">Search</button>
+        </div>
+        <div class="search-history">
+            <h4>Search History</h4>
+            <ul id="searchHistory"></ul>
+        </div>
     </aside>
 
     <!-- Main content section for displaying weather details -->
     <main>
         <div id="currentWeather"></div>
         <div>
-            <h3>5-day Forecast</h3>
+            <h4>5-Day Forecast</h4>
             <div id="futureCards"></div>
         </div>
     </main>
-    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
     </body>
 </html>

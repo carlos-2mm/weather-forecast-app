@@ -12,16 +12,28 @@ function getWeatherData(cityName) {
         return response.json();
     })
     .then(function(data) {
-        console.log("Current weather data:", data);
+        displayCurrentWeather(data);
         return fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&units=metric&appid=' + apiKey);
     })
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        console.log("5-day forecast data:", data);
+        displayFiveDayForecast(data);
     })
     .catch(function(error) {
         console.error("There was an error fetching the weather data.", error);
     });
+}
+
+function displayCurrentWeather(data) {
+    var currentWeatherDiv = document.getElementById('currentWeather');
+    currentWeatherDiv.innerHTML = '';
+    currentWeatherDiv.innerHTML = [
+        '<h2>', data.name, ' (', new Date().toLocaleDateString(), ')</h2>',
+        '<img src="https://openweathermap.org/img/w/', data.weather[0].icon, '.png">',
+        '<p>Temperature: ', data.main.temp, '°C</p>',
+        '<p>Humidity: ', data.main.humidity, '%</p>',
+        '<p>Wind Speed: ', data.wind.speed, ' m/s</p>'
+    ].join('');
 }

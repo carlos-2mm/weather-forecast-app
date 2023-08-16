@@ -1,7 +1,13 @@
+:root {
+    --main-color: #4F8BB9;
+    --medium-color: #E6F4F1;
+    --light-color: #EDFBFF;
+
+}
 
 body {
     font-family: 'Raleway', sans-serif;
-    background-image: linear-gradient(to bottom, #669dc4, #70a5ca, #79acd1, #83b4d7, #8cbcde, #93c2e3, #9ac8e8, #a1ceed, #a7d3f1, #aed9f6, #b4defa, #bbe4ff);
+    background-image: linear-gradient(to bottom, #4f8bb9, #62a0c1, #7cb5c9, #9ac8d1, #badbdc, #c9e4e4, #d8edec, #e7f6f5, #e8f7f8, #eaf9fa, #ebfafd, #edfbff);
     margin: 0;
     height: 100vh;
 }

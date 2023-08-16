@@ -1,6 +1,10 @@
 var apiKey = '97fa0144a21139182aed6c24b1b8ee86';
 
 $("#currentDay").text(new Date().toDateString());
+document.getElementById('searchBtn').addEventListener('click', function() {
+    var cityName = document.getElementById('cityInput').value;
+    getWeatherData(cityName);
+});
 
 function getWeatherData(cityName) {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&appid=' + apiKey)

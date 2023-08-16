@@ -37,3 +37,20 @@ function displayCurrentWeather(data) {
         '<p>Wind Speed: ', data.wind.speed, ' m/s</p>'
     ].join('');
 }
+
+function displayFiveDayForecast(data) {
+    var futureCardsDiv = document.getElementById('futureCards');
+    futureCardsDiv.innerHTML = '';
+    for (var i = 0; i < data.list.length; i += 8) {
+        var forecast = data.list[i];
+        futureCardsDiv.innerHTML += [
+            '<div class="card">',
+                '<h4>', new Date(forecast.dt_txt).toLocaleDateString(), '</h4>',
+                '<img src="https://openweathermap.org/img/w/', forecast.weather[0].icon, '.png">',
+                '<p>Temperature: ', forecast.main.temp, '°C</p>',
+                '<p>Humidity: ', forecast.main.humidity, '%</p>',
+                '<p>Wind Speed: ', forecast.wind.speed, ' m/s</p>',
+            '</div>'
+        ].join('');
+    }
+}

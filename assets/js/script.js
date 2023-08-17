@@ -13,6 +13,7 @@ function getWeatherData(cityName) {
     })
     .then(function(data) {
         displayCurrentWeather(data);
+        saveToSearchHistory(cityName);
         return fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&units=metric&appid=' + apiKey);
     })
     .then(function(response) {
@@ -32,7 +33,7 @@ function displayCurrentWeather(data) {
     currentWeatherDiv.innerHTML = [
         '<h2>', data.name, ' (', new Date().toLocaleDateString(), ')</h2>',
         '<img src="https://openweathermap.org/img/w/', data.weather[0].icon, '.png">',
-        '<p>Temperature: ', data.main.temp, '°C</p>',
+        '<p>Temperature: ', Math.round(data.main.temp), '°C</p>',
         '<p>Humidity: ', data.main.humidity, '%</p>',
         '<p>Wind Speed: ', data.wind.speed, ' m/s</p>'
     ].join('');
@@ -47,7 +48,7 @@ function displayFiveDayForecast(data) {
             '<div class="card">',
                 '<h4>', new Date(forecast.dt_txt).toLocaleDateString(), '</h4>',
                 '<img src="https://openweathermap.org/img/w/', forecast.weather[0].icon, '.png">',
-                '<p>Temperature: ', forecast.main.temp, '°C</p>',
+                '<p>Temperature: ', Math.round(forecast.main.temp), '°C</p>',
                 '<p>Humidity: ', forecast.main.humidity, '%</p>',
                 '<p>Wind Speed: ', forecast.wind.speed, ' m/s</p>',
             '</div>'

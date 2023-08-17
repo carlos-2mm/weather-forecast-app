@@ -54,3 +54,37 @@ function displayFiveDayForecast(data) {
         ].join('');
     }
 }
+
+function saveToSearchHistory(cityName) {
+    var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    if (searchHistory.indexOf(cityName) === -1) {
+        searchHistory.push(cityName);
+        localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+    }
+    displaySearchHistory();
+}
+
+function displaySearchHistory() {
+    var historyList = document.getElementById('searchHistory');
+    historyList.innerHTML = '';
+    var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    for (var i = 0; i < searchHistory.length; i++) {
+        (function(city) {
+            var cityButton = document.createElement('button');
+            cityButton.textContent = city;
+            cityButton.className = "history-button";
+            cityButton.addEventListener('click', function() {
+                getWeatherData(city);
+            });
+            historyList.appendChild(cityButton);
+        })(searchHistory[i]);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    if (searchHistory.length > 0) {
+        getWeatherData(searchHistory[searchHistory.length - 1]);
+    }
+    displaySearchHistory();
+});

@@ -32,7 +32,7 @@ function displayCurrentWeather(data) {
     currentWeatherDiv.innerHTML = '';
     currentWeatherDiv.innerHTML = [
         '<h2>', data.name, ' (', new Date().toLocaleDateString(), ')</h2>',
-        '<img src="https://openweathermap.org/img/w/', data.weather[0].icon, '.png">',
+        '<img class="current-weather-icon" src="https://openweathermap.org/img/w/', data.weather[0].icon, '.png">',
         '<p>Temperature: ', Math.round(data.main.temp), '°C</p>',
         '<p>Humidity: ', data.main.humidity, '%</p>',
         '<p>Wind Speed: ', data.wind.speed, ' m/s</p>'
@@ -46,11 +46,11 @@ function displayFiveDayForecast(data) {
         var forecast = data.list[i];
         futureCardsDiv.innerHTML += [
             '<div class="card">',
-                '<h4>', new Date(forecast.dt_txt).toLocaleDateString(), '</h4>',
+                '<h5 class="text-center">', new Date(forecast.dt_txt).toLocaleDateString(), '</h5>',
                 '<img src="https://openweathermap.org/img/w/', forecast.weather[0].icon, '.png">',
-                '<p>Temperature: ', Math.round(forecast.main.temp), '°C</p>',
-                '<p>Humidity: ', forecast.main.humidity, '%</p>',
-                '<p>Wind Speed: ', forecast.wind.speed, ' m/s</p>',
+                '<p class="future-temp">Temperature: ', Math.round(forecast.main.temp), '°C</p>',
+                '<p class="future-humidity">Humidity: ', forecast.main.humidity, '%</p>',
+                '<p class="future-windspeed">Wind Speed: ', forecast.wind.speed, ' m/s</p>',
             '</div>'
         ].join('');
     }

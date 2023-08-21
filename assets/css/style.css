@@ -16,7 +16,7 @@ header {
     color: white;
     text-align: center;
     padding: 10px 0;
-    border-bottom: whitesmoke 2px solid;
+    border-bottom: #ccc 2px solid;
     margin: 25px;
 }
 
@@ -30,9 +30,11 @@ aside {
 }
 
 main {
-    float: right;
-    width: 75%;
     padding: 10px;
+    float: none;
+    width: auto;
+    padding: 10px;
+    margin-left: 25%;
 }
 
 #cityInput, #searchBtn {
@@ -111,4 +113,42 @@ button:hover {
 
 .history-button:hover {
     background-color: #005ea3;
+}
+
+#currentWeather {
+    border-bottom:2px solid #ccc;
+    padding: 25px;
+}
+
+.fiveDays {
+    padding-top: 25px;
+}
+
+.card {
+    width: 18%;
+    display: inline-block;
+    margin: 0 1%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--medium-color);
+    border-radius: 8px;
+}
+
+#futureCards {
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.future-humidity, .future-windspeed {
+    font-size: .85rem;
+}
+
+.future-temp {
+    font-size: .95rem;
+    font-weight: bold;
+}
+
+.current-weather-icon {
+    width: 80px; /* Adjust as needed */
+    height: 80px; /* Adjust as needed */
 }

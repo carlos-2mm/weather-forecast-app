@@ -1,10 +1,11 @@
+/* Root color definitions for theme consistency */
 :root {
     --main-color: #4F8BB9;
     --medium-color: #E6F4F1;
     --light-color: #EDFBFF;
-
 }
 
+/* Base styling for the body, including font, background gradient, and full viewport height */
 body {
     font-family: 'Raleway', sans-serif;
     background-image: linear-gradient(to bottom, #4f8bb9, #62a0c1, #7cb5c9, #9ac8d1, #badbdc, #c9e4e4, #d8edec, #e7f6f5, #e8f7f8, #eaf9fa, #ebfafd, #edfbff);
@@ -12,6 +13,7 @@ body {
     height: 100vh;
 }
 
+/* Header styling, including centered text, padding, and bottom border */
 header {
     color: white;
     text-align: center;
@@ -20,6 +22,7 @@ header {
     margin: 25px;
 }
 
+/* Side panel styling, aligned to the left */
 aside {
     text-align: center;
     float: left;
@@ -29,6 +32,7 @@ aside {
     box-sizing: border-box;
 }
 
+/* Main content area styling */
 main {
     padding: 10px;
     float: none;
@@ -37,50 +41,59 @@ main {
     margin-left: 25%;
 }
 
+/* Input and button width definitions for uniformity */
 #cityInput, #searchBtn {
-    width: 100%; 
-    box-sizing: border-box; 
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* Input styling for city search */
 #cityInput {
     padding: 10px;
-    margin-bottom: 10px; 
-    border: 1px solid #ccc; 
-    height: auto; 
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    height: auto;
 }
 
+/* Force the title to stay on one line */
 h2 {
     white-space: nowrap;
 }
 
+/* Styling for the city search section */
 .search-city {
     border-bottom: 2px solid #ccc;
-    padding-bottom: 20px; 
+    padding-bottom: 20px;
     margin-bottom: 20px;
 }
 
+/* Search history list: removing default padding and margin */
 #searchHistory {
     padding: 0;
     margin: 0;
 }
 
+/* Consistent padding for search button and history buttons */
 #searchBtn, .history-button {
     margin: 0;
     padding: 10px;
     box-sizing: border-box;
 }
 
+/* List styling for search history section */
 .search-history {
     padding-top: 20px;
     list-style-type: none;
-    padding: 0; 
+    padding: 0;
     margin: 0;
 }
 
+/* Header for the search history section */
 .search-history h4 {
     text-align: center;
 }
 
+/* General button styling */
 button {
     display: block;
     width: 100%;
@@ -91,10 +104,12 @@ button {
     border: none;
 }
 
+/* Hover effect for buttons */
 button:hover {
     background-color: #005ea3;
 }
 
+/* Styling for individual buttons in the search history */
 .history-button {
     margin-left: 0;
     margin-right: 0;
@@ -106,24 +121,28 @@ button:hover {
     color: white;
     border: 1px solid #4F8BB9;
     text-align: center;
-    overflow: hidden;  
+    overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;  
+    white-space: nowrap;
 }
 
+/* Hover effect for history buttons */
 .history-button:hover {
     background-color: #005ea3;
 }
 
+/* Styling for the current weather display section */
 #currentWeather {
     border-bottom:2px solid #ccc;
     padding: 25px;
 }
 
+/* Padding for the five-day forecast section */
 .fiveDays {
     padding-top: 25px;
 }
 
+/* Card styles for each day in the five-day forecast */
 .card {
     width: 18%;
     display: inline-block;
@@ -133,22 +152,24 @@ button:hover {
     border-radius: 8px;
 }
 
+/* Styling for the container of forecast cards */
 #futureCards {
     width: 100%;
     overflow: auto;
     white-space: nowrap;
 }
 
+/* Font adjustments for various weather details */
 .future-humidity, .future-windspeed {
     font-size: .85rem;
 }
-
 .future-temp {
     font-size: .95rem;
     font-weight: bold;
 }
 
+/* Styling for the current weather icon */
 .current-weather-icon {
-    width: 80px; /* Adjust as needed */
-    height: 80px; /* Adjust as needed */
+    width: 80px;
+    height: 80px;
 }
